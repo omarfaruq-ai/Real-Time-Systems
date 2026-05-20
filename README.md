@@ -7,4 +7,3 @@ Module Number: CS4160
 Semester: Summer Semester 2026  
 University: Universität zu Lübeck  
 Address: Ratzeburger Allee 160, 23562 Lübeck  
-
