@@ -1,0 +1,66 @@
+#include "beremiz.h"
+#ifndef __POUS_H
+#define __POUS_H
+
+#include "accessor.h"
+#include "iec_std_lib.h"
+
+__DECLARE_ENUMERATED_TYPE(LOGLEVEL,
+  LOGLEVEL__CRITICAL,
+  LOGLEVEL__WARNING,
+  LOGLEVEL__INFO,
+  LOGLEVEL__DEBUG
+)
+// FUNCTION_BLOCK LOGGER
+// Data part
+typedef struct {
+  // FB Interface - IN, OUT, IN_OUT variables
+  __DECLARE_VAR(BOOL,EN)
+  __DECLARE_VAR(BOOL,ENO)
+  __DECLARE_VAR(BOOL,TRIG)
+  __DECLARE_VAR(STRING,MSG)
+  __DECLARE_VAR(LOGLEVEL,LEVEL)
+
+  // FB private variables - TEMP, private and located variables
+  __DECLARE_VAR(BOOL,TRIG0)
+
+} LOGGER;
+
+void LOGGER_init__(LOGGER *data__, BOOL retain);
+// Code part
+void LOGGER_body__(LOGGER *data__);
+// PROGRAM EXERCISE5
+// Data part
+typedef struct {
+  // PROGRAM Interface - IN, OUT, IN_OUT variables
+
+  // PROGRAM private variables - TEMP, private and located variables
+  __DECLARE_VAR(BOOL,LEFT_HAND)
+  __DECLARE_VAR(BOOL,RIGHT_HAND)
+  __DECLARE_VAR(BOOL,GUARD_FRONT)
+  __DECLARE_VAR(BOOL,GUARD_LEFT)
+  __DECLARE_VAR(BOOL,GUARD_RIGHT)
+  __DECLARE_VAR(BOOL,E_STOP)
+  __DECLARE_VAR(BOOL,MODE_SWITCH)
+  __DECLARE_VAR(BOOL,KEY_SWITCH)
+  __DECLARE_VAR(BOOL,STROKE_SENSOR)
+  __DECLARE_VAR(BOOL,PRESSURE_PUMP)
+  __DECLARE_VAR(BOOL,PRESS_RAM_FULL)
+  __DECLARE_VAR(BOOL,PRESS_RAM_SLOW)
+  __DECLARE_VAR(BOOL,SAFETY_OK)
+  __DECLARE_VAR(BOOL,FAULT_LIGHT)
+  __DECLARE_VAR(BOOL,PUMP_RUN_LIGHT)
+  __DECLARE_VAR(BOOL,JAM_FAULT_LIGHT)
+  __DECLARE_VAR(BOOL,STABILIZATION_DONE)
+  __DECLARE_VAR(BOOL,PREV_MODE)
+  __DECLARE_VAR(BOOL,MODE_CHANGED)
+  __DECLARE_VAR(BOOL,BOTH_HANDS)
+  TON TON0;
+  TON TON1;
+
+} EXERCISE5;
+
+void EXERCISE5_init__(EXERCISE5 *data__, BOOL retain);
+// Code part
+void EXERCISE5_body__(EXERCISE5 *data__);
+#endif //__POUS_H
