@@ -1,7 +1,5 @@
 # Real-Time-Systems
 
-Programmable Logic Controllers
-
 Name: Real-Time Systems
 Lecture: Dr.-Ing. Rolf Meyer
 Institute: Institut für Technische Informatik
